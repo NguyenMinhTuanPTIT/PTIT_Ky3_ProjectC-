@@ -1,0 +1,10 @@
+# Visual Studio build files
+Debug/
+Release/
+*.sdf
+*.suo
+*.pdb
+*.ilk
+*.obj
+*.exe
+.vs/
