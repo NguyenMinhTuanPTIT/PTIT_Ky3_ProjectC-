@@ -14,7 +14,24 @@ struct NguoiDung {
 
 // Hàm đăng ký người dùng mới
 bool dangKyNguoiDung(const string& tenDangNhap, const string& matKhau) {
-    // Mở file nguoidung.txt để ghi thêm dữ liệu
+    // Kiểm tra tên đăng nhập đã tồn tại 
+    ifstream fileDoc("nguoidung.txt");
+    if (!fileDoc) {
+        wcout << L"Lỗi: Không mở được file nguoidung.txt để kiểm tra!" << endl;
+        return false;
+    }
+    string tenLuu, matKhauLuu;
+    int diemLuu;
+    while (fileDoc >> tenLuu >> matKhauLuu >> diemLuu) {
+        if (tenLuu == tenDangNhap) {
+            fileDoc.close();
+            wcout << L"Lỗi: Tên đăng nhập đã tồn tại!" << endl;
+            return false;
+        }
+    }
+    fileDoc.close();
+
+    // Mở file để ghi thêm dữ liệu
     ofstream fileGhi("nguoidung.txt", ios::app);
     if (!fileGhi) {
         wcout << L"Lỗi: Không mở được file nguoidung.txt để ghi!" << endl;
