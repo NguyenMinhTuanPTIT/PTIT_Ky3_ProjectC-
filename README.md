@@ -11,5 +11,6 @@ Thành viên:
 
 Trạng thái
 
-Đang phát triển: Thiết lập môi trường và repository.
-
+- Giai đoạn 1: Thiết lập môi trường và repository.
+- Giai đoạn 2: Đăng ký và đăng nhập người dùng, lưu dữ liệu vào file.
+    + Hướng dẫn sử dụng: Chạy chương trình, nhập tên đăng nhập và mật khẩu.
